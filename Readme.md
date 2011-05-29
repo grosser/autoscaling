@@ -4,8 +4,9 @@ Setup
 =====
  - `git clone git://github.com/grosser/autoscaling.git`
  - `cd autoscaling`
- - copy credentials to yourproject.credentials.priv
- - copy settings to yourproject.settings.priv and change credentials path
+ - `sh download_tools.sh`
+ - copy credentials to yourproject.credentials.priv and customize
+ - copy settings to yourproject.settings.priv and customize + change credentials path
 
 Usage
 =====
