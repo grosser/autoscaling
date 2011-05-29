@@ -3,10 +3,10 @@ sh "$1.settings.sh"
 ### Install
 
 # Set up load balancer
-# elb-create-lb $LB_NAME --headers --listener "lb-port=80,instance-port=80,protocol=http" --availability-zones $ZONE
+elb-create-lb $LB_NAME --headers --listener "lb-port=80,instance-port=80,protocol=http" --availability-zones $ZONE
 
 #Setup Load Balancer Health Check
-# elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/index.php" --interval 5 --timeout 2 --unhealthy-threshold 2 --healthy-threshold 2
+elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/index.php" --interval 5 --timeout 2 --unhealthy-threshold 2 --healthy-threshold 2
 
 # Setup instance launch config
 as-create-launch-config $LC_NAME --image-id $LC_IMAGE_ID --instance-type $INSTANCE_SIZE --group $SECURITY_GROUP --region $REGION  --key $KEY_PAIR
