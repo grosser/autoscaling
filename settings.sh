@@ -1,10 +1,14 @@
-AWS_AUTO_SCALING_HOME="`pwd`/as-tools"
-AWS_CLOUDWATCH_HOME="`pwd`/cw-tools"
+# stuff amazon script needs
+export AWS_AUTO_SCALING_HOME="`pwd`/as-tools"
+export AWS_CLOUDWATCH_HOME="`pwd`/cw-tools"
 
-JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
+export JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
+export AWS_CREDENTIAL_FILE="`pwd`/credentials"
+
+# temporarily add bin folders to PATH
 PATH="$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$PATH" # TODO only do this once...
 
-AWS_CREDENTIAL_FILE="`pwd`/credentials"
+# set you custom stuff
 ZONE="eu-west-1a" # <=== Availability Zone
 REGION="eu-west-1"
 SECURITY_GROUP="my-sg"

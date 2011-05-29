@@ -2,7 +2,8 @@ A small script to get started with aws autoscaling, inspired by [Tehrani](http:/
 
 Setup
 =====
-
+ - `git clone git://github.com/grosser/autoscaling.git`
+ - `cd autoscaling`
  - copy credentials to yourproject.credentials.priv
  - copy settings to yourproject.settings.priv and change credentials path
 
@@ -17,7 +18,7 @@ Updating the project
 ====================
 
  - Download [Amazon EC2 API tools](http://aws.amazon.com/developertools/2535) extract and move them to as-tools
- - Download [Amazon Amazon CloudWatch API Tools](http://aws.amazon.com/developertools/2534) extract them and move them to cw-tools
+ - Download [Amazon Amazon CloudWatch API Tools](http://aws.amazon.com/developertools/2534) extract and move them to cw-tools
 
 Author
 ======
