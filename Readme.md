@@ -9,7 +9,7 @@ Setup
 Usage
 =====
 
-    sh yourproject.settings.priv
+    source yourproject.settings.priv
     # paste commands (one by one) as shown in initialize_autoscale.sh
 
 

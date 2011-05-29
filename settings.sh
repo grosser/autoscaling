@@ -2,7 +2,7 @@ AWS_AUTO_SCALING_HOME="`pwd`/as-tools"
 AWS_CLOUDWATCH_HOME="`pwd`/cw-tools"
 
 JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
-PATH="$AWS_AUTO_SCALING_HOME/bin:AWS_CLOUDWATCH_HOME/bin:$PATH"
+PATH="$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$PATH" # TODO only do this once...
 
 AWS_CREDENTIAL_FILE="`pwd`/credentials"
 ZONE="eu-west-1a" # <=== Availability Zone
