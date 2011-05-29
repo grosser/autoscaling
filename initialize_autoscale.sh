@@ -1,4 +1,4 @@
-. settings.sh
+sh "$1.settings.sh"
 
 ### Install
 
@@ -29,10 +29,10 @@ mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --ev
 
 
 ### Delete everything:
-as-update-auto-scaling-group $SG_NAME --min-size 0 --max-size 0 --region $REGION
+# as-update-auto-scaling-group $SG_NAME --min-size 0 --max-size 0 --region $REGION
 
 # -> terminate all instances
 
-as-delete-launch-config $LC_NAME --region $REGION -f
-as-delete-auto-scaling-group $SG_NAME --region $REGION -f
+# as-delete-launch-config $LC_NAME --region $REGION -f
+# as-delete-auto-scaling-group $SG_NAME --region $REGION -f
 
