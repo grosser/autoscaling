@@ -13,12 +13,10 @@ Usage
     source yourproject.settings.priv
     # paste commands (one by one) as shown in initialize_autoscale.sh
 
-
-Updating the project
-====================
-
- - Download [Amazon EC2 API tools](http://aws.amazon.com/developertools/2535) extract and move them to as-tools
- - Download [Amazon Amazon CloudWatch API Tools](http://aws.amazon.com/developertools/2534) extract and move them to cw-tools
+TODO
+====
+ - make download_tools script always fetch the newest version (not hardcoded)
+ - modify PATH only once
 
 Author
 ======
