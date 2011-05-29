@@ -4,7 +4,7 @@ Setup
 =====
 
  - copy credentials to yourproject.credentials.priv
- - copy settings to yourproject.settings.priv
+ - copy settings to yourproject.settings.priv and change credentials path
 
 Usage
 =====

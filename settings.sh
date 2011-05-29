@@ -1,7 +1,10 @@
-JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
-PATH="`pwd`/as-tools/bin:`pwd`/cf-tools/bin:$PATH"
-AWS_CREDENTIAL_FILE="`pwd`/credentials"
+AWS_AUTO_SCALING_HOME="`pwd`/as-tools"
+AWS_CLOUDWATCH_HOME="`pwd`/cw-tools"
 
+JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
+PATH="$AWS_AUTO_SCALING_HOME/bin:AWS_CLOUDWATCH_HOME/bin:$PATH"
+
+AWS_CREDENTIAL_FILE="`pwd`/credentials"
 ZONE="eu-west-1a" # <=== Availability Zone
 REGION="eu-west-1"
 SECURITY_GROUP="my-sg"
