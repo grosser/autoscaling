@@ -19,3 +19,9 @@ wget http://ec2-downloads.s3.amazonaws.com/CloudWatch-2010-08-01.zip
 unzip CloudWatch*
 rm -rf CloudWatch*.zip
 mv CloudWatch* cw-tools
+
+rm -rf ec2-api-tools*
+wget http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip
+unzip ec2-api-tools*
+rm -rf ec2-api-tools*.zip
+mv ec2-api-tools* ec2-tools

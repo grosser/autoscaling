@@ -1,12 +1,19 @@
 sh "$1.settings.sh"
 
+### Read current value
+elb-describe-lbs --region $REGION
+elb-describe-instance-health $LB_NAME --region $REGION
+as-describe-launch-configs $LC_NAME --region $REGION
+as-describe-auto-scaling-groups $SG_NAME --region $REGION
+mon-describe-alarms --region $REGION
+
 ### Install
 
 # Set up load balancer
 elb-create-lb $LB_NAME --headers --listener "lb-port=80,instance-port=80,protocol=http" --availability-zones $ZONE
 
 #Setup Load Balancer Health Check
-elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/index.php" --interval 5 --timeout 2 --unhealthy-threshold 2 --healthy-threshold 2
+elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/" --interval 5 --timeout 2 --unhealthy-threshold 2 --healthy-threshold 2 --region $REGION
 
 # Setup instance launch config
 as-create-launch-config $LC_NAME --image-id $LC_IMAGE_ID --instance-type $INSTANCE_SIZE --group $SECURITY_GROUP --region $REGION  --key $KEY_PAIR
