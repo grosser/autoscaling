@@ -5,7 +5,7 @@ export AWS_ELB_HOME="`pwd`/elb-tools"
 export EC2_HOME="`pwd`/ec2-tools"
 
 # only needed for ec2-tools
-export EC2_PRIVATE_KEY="`pwd`/xxx.pk.pem"
+export EC2_PRIVATE_KEY="`pwd`/xxx.pk.pem" # downloadable when X.509 certificate is created
 export EC2_CERT="`pwd`/xxx.cert.pem"
 
 export JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
