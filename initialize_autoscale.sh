@@ -10,7 +10,7 @@ mon-describe-alarms --region $REGION
 ### Install
 
 # Set up load balancer
-elb-create-lb $LB_NAME --headers --listener "lb-port=80,instance-port=80,protocol=http" --availability-zones $ZONE
+elb-create-lb $LB_NAME --headers --listener "lb-port=80,instance-port=$LB_INSTANCE_PORT,protocol=http" --availability-zones $ZONE
 
 #Setup Load Balancer Health Check
 elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/" --interval 5 --timeout 2 --unhealthy-threshold 2 --healthy-threshold 2 --region $REGION
@@ -38,8 +38,7 @@ mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --ev
 ### Delete everything:
 # as-update-auto-scaling-group $SG_NAME --min-size 0 --max-size 0 --region $REGION
 
-# -> terminate all instances
+# -> terminate all instances in aws console
 
 # as-delete-launch-config $LC_NAME --region $REGION -f
 # as-delete-auto-scaling-group $SG_NAME --region $REGION -f
-

@@ -8,7 +8,13 @@ export EC2_HOME="`pwd`/ec2-tools"
 export EC2_PRIVATE_KEY="`pwd`/xxx.pk.pem" # downloadable when X.509 certificate is created
 export EC2_CERT="`pwd`/xxx.cert.pem"
 
-export JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
+#set environment for linux or mac
+if [ -f /usr/lib/jvm/java-6-sun/jre ]; then
+  export JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
+else
+  export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+fi
+
 export AWS_CREDENTIAL_FILE="`pwd`/credentials"
 
 # temporarily add bin folders to PATH
@@ -24,3 +30,4 @@ LC_NAME="my-lc"
 LC_IMAGE_ID="ami-xxxx"
 SG_NAME="my-sg"
 KEY_PAIR="my-key"
+$LB_INSTANCE_PORT
