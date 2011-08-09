@@ -5,6 +5,7 @@ elb-describe-lbs --region $REGION
 elb-describe-instance-health $LB_NAME --region $REGION
 as-describe-launch-configs $LC_NAME --region $REGION
 as-describe-auto-scaling-groups $SG_NAME --region $REGION
+as-describe-scaling-activities $SG_NAME --region $REGION
 mon-describe-alarms --region $REGION
 
 ### Install
