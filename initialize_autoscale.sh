@@ -19,10 +19,10 @@ elb-configure-healthcheck $LB_NAME --headers --target "HTTP:80/" --interval 5 --
 as-create-launch-config $LC_NAME --image-id $LC_IMAGE_ID --instance-type $INSTANCE_SIZE --group $SECURITY_GROUP --region $REGION  --key $KEY_PAIR
 
 #Setup Auto Scaling Group
-as-create-auto-scaling-group $SG_NAME --availability-zones $ZONE --launch-configuration $LC_NAME --min-size 1 --max-size 6 --load-balancers $LB_NAME --show-xml --region $REGION
+as-create-auto-scaling-group $SG_NAME --availability-zones $ZONE --launch-configuration $LC_NAME --min-size $MIN_INSTANCES --max-size $MAX_INSTANCES --load-balancers $LB_NAME --show-xml --region $REGION
 
 # Setup Scaling Policies (to add instance)
-SCALE_UP_POLICY=`as-put-scaling-policy MyScaleUpPolicy1 --auto-scaling-group $SG_NAME --adjustment=1 --type ChangeInCapacity --cooldown 300 --region $REGION`
+SCALE_UP_POLICY=`as-put-scaling-policy MyScaleUpPolicy1 --auto-scaling-group $SG_NAME --adjustment=$SCALE_UP_ADJUSTMENT --type ChangeInCapacity --cooldown 300 --region $REGION`
 
 #Setup Alarm (Add instance when CPU Load is more then 70%)
 mon-put-metric-alarm MyHighCPUAlarm1 --comparison-operator GreaterThanThreshold --evaluation-periods 1 --metric-name CPUUtilization --namespace "AWS/EC2" --period 60 --statistic Average --threshold 70 --alarm-actions $SCALE_UP_POLICY --dimensions "AutoScalingGroupName=$SG_NAME" --region $REGION
