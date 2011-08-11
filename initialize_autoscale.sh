@@ -38,8 +38,9 @@ mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --ev
 
 ### Delete everything:
 # as-update-auto-scaling-group $SG_NAME --min-size 0 --max-size 0 --region $REGION
+# -> wait for instances to be terminated (or terminate by hand in aws console)
 
-# -> terminate all instances in aws console
-
-# as-delete-launch-config $LC_NAME --region $REGION -f
 # as-delete-auto-scaling-group $SG_NAME --region $REGION -f
+# as-delete-launch-config $LC_NAME --region $REGION -f
+
+# elb-delete-lb $LB_NAME --force
