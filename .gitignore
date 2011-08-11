@@ -1,5 +1,5 @@
-*.priv
-*.pem
+config
+tools
 elb-tools
 as-tools
 cw-tools
