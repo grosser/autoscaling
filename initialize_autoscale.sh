@@ -43,4 +43,4 @@ mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --ev
 # as-delete-auto-scaling-group $SG_NAME --region $REGION -f
 # as-delete-launch-config $LC_NAME --region $REGION -f
 
-# elb-delete-lb $LB_NAME --force
+# elb-delete-lb $LB_NAME --force --region $REGION
