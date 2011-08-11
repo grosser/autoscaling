@@ -19,8 +19,9 @@ Setup
 Customize the copied credentials and settings.
 
 If you want to use ec2-tools, also add:
-    config/yourproject/ec2.cert.pem
-    config/yourproject/ec2.pk.pem
+
+ - config/yourproject/ec2.cert.pem
+ - config/yourproject/ec2.pk.pem
 
 Usage
 =====
