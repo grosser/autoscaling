@@ -1,4 +1,4 @@
-source config/defaults.sh `$(dirname $0)`
+source config/defaults.sh $(dirname $BASH_SOURCE)
 
 # Enter your AMI ID here
 # this is Ubuntu 10.04 with EBS on eu-west
