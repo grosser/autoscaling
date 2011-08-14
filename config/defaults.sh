@@ -15,7 +15,7 @@ export EC2_CERT="$BASE_DIR/ec2.cert.pem"
 
 
 #set environment for linux or mac
-if [ -f "/usr/lib/jvm/java-6-sun/jre" ]; then
+if [ -e /usr/lib/jvm/java-6-sun/jre ]; then
   export JAVA_HOME="/usr/lib/jvm/java-6-sun/jre"
 else
   export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
