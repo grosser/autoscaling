@@ -1,7 +1,7 @@
 # ! Do not add custom settings here !
 
 # give me a config folder as first argument e.g. config/myproject
-BASE_DIR = $(readlink -f $1)
+BASE_DIR=$(readlink -f $1)
 
 # script home dirs
 export AWS_AUTO_SCALING_HOME="`pwd`/tools/as"
