@@ -17,3 +17,8 @@ addresses = instance_info.map{|i| i.split(" ")[3]}
 addresses.each do |address|
   role :app, "#{address}:22"
 end
+
+# example to get current queue from haproxy
+task :current_queue do
+  run "curl 'http://username:password@localhost/haproxy?stats;csv' 2> /dev/null  | grep self | awk '{split($0,a,\",\"); print a[3]}'"
+end
