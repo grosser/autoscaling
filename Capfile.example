@@ -5,7 +5,7 @@ set :user, ENV['USER']
 ssh_options[:keys] = "~/.ssh/id_rsa"
 set :use_sudo, false
 
-raise "USAGE: source ./config/FOLDER/settings.sh && cap fooo" unless ENV['AWS_CREDENTIAL_FILE']
+raise "USAGE: source ./config/FOLDER/settings.sh && cap fooo" unless ENV['SG_NAME']
 
 instances = `as-describe-auto-scaling-groups $SG_NAME --region $REGION|grep ^INSTANCE`.split("\n")
 ids = instances.map{|i| i.split(" ")[1]}
