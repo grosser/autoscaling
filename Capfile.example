@@ -1,0 +1,19 @@
+# an esay way to connect to all instances
+# cap shell
+
+set :user, ENV['USER']
+ssh_options[:keys] = "~/.ssh/id_rsa"
+set :use_sudo, false
+
+raise "USAGE: source ./config/FOLDER/settings.sh && cap fooo" unless ENV['AWS_CREDENTIAL_FILE']
+
+instances = `as-describe-auto-scaling-groups $SG_NAME --region $REGION|grep ^INSTANCE`.split("\n")
+ids = instances.map{|i| i.split(" ")[1]}
+
+instance_info = `ec2-describe-instances #{ids.join(" ")} --region $REGION|grep ^INSTANCE`
+addresses = instance_info.map{|i| i.split(" ")[3]}
+
+#puts "addresses: #{addresses.inspect}"
+addresses.each do |address|
+  role :app, "#{address}:22"
+end
