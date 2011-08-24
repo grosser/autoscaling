@@ -24,10 +24,10 @@ fi
 export AWS_CREDENTIAL_FILE="$BASE_DIR/credentials"
 
 # temporarily add each bin folders to PATH
-PATH="$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$AWS_ELB_HOME/bin:$PATH" # TODO only do this once...
+export PATH="$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$AWS_ELB_HOME/bin:$PATH" # TODO only do this once...
 
 # Some sane defaults
-SECURITY_GROUP="default"
-LB_INSTANCE_PORT=80
-MIN_INSTANCES=1
-SCALE_UP_ADJUSTMENT=1
+export SECURITY_GROUP="default"
+export LB_INSTANCE_PORT=80
+export MIN_INSTANCES=1
+export SCALE_UP_ADJUSTMENT=1

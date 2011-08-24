@@ -68,9 +68,13 @@ Usage
 
     elb-delete-lb $LB_NAME --force --region $REGION
 
+### Connect to all instances
+
+    source config/FOLDER/settings.sh && cap shell
+
 TODO
 ====
- - make download_tools script always fetch the newest version (not hardcoded)
+ - make download_tools script always fetch the newest version (no hardcoded versions)
  - modify PATH only once
 
 Author
