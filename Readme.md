@@ -67,6 +67,16 @@ Usage
     as-delete-launch-config $LC_NAME --region $REGION -f
 
     elb-delete-lb $LB_NAME --force --region $REGION
+    
+### Update AMI
+    
+    # change $LC_NAME/$LC_IMAGE_ID in settings.sh + source config again
+    # as-create-launch-config ... see above
+    as-update-auto-scaling-group $SG_NAME --launch-configuration $LC_NAME --region $REGION
+    
+### Update min instance count
+    
+    as-update-auto-scaling-group $SG_NAME --min-size=xxx --region $REGION
 
 ### Connect to all instances
 
