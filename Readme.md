@@ -73,6 +73,7 @@ Usage
     # change $LC_NAME/$LC_IMAGE_ID in settings.sh + source config again
     # as-create-launch-config ... see above
     as-update-auto-scaling-group $SG_NAME --launch-configuration $LC_NAME --region $REGION
+    # slowly terminane all current instances --> new instances will be started
     
 ### Update min instance count
     
