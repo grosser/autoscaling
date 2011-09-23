@@ -40,11 +40,11 @@ Usage
 
     # Automatically add new instances when CPU Load is above then 70%
     SCALE_UP_POLICY=`as-put-scaling-policy MyScaleUpPolicy1 --auto-scaling-group $SG_NAME --adjustment=$SCALE_UP_ADJUSTMENT --type ChangeInCapacity --cooldown 300 --region $REGION`
-    mon-put-metric-alarm MyHighCPUAlarm1 --comparison-operator GreaterThanThreshold --evaluation-periods 1 --metric-name CPUUtilization --namespace "AWS/EC2" --period 60 --statistic Average --threshold 70 --alarm-actions $SCALE_UP_POLICY --dimensions "AutoScalingGroupName=$SG_NAME" --region $REGION
+    mon-put-metric-alarm MyHighCPUAlarm1 --comparison-operator GreaterThanThreshold --evaluation-periods 3 --metric-name CPUUtilization --namespace "AWS/EC2" --period 60 --statistic Average --threshold 70 --alarm-actions $SCALE_UP_POLICY --dimensions "AutoScalingGroupName=$SG_NAME" --region $REGION
 
     # Automatically remove instances when CPU Load is less then 30%
     SCALE_DOWN_POLICY=`as-put-scaling-policy MyScaleDownPolicy1 --auto-scaling-group $SG_NAME --adjustment=-1 --type ChangeInCapacity --cooldown 300 --region $REGION`
-    mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --evaluation-periods 1 --metric-name CPUUtilization --namespace "AWS/EC2" --period 60 --statistic Average --threshold 30 --alarm-actions $SCALE_DOWN_POLICY --dimensions "AutoScalingGroupName=$SG_NAME" --region $REGION
+    mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold --evaluation-periods 3 --metric-name CPUUtilization --namespace "AWS/EC2" --period 60 --statistic Average --threshold 30 --alarm-actions $SCALE_DOWN_POLICY --dimensions "AutoScalingGroupName=$SG_NAME" --region $REGION
 
 ### Status
 
