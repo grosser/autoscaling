@@ -57,6 +57,7 @@ Usage
     as-describe-scaling-activities $SG_NAME --region $REGION
 
     mon-describe-alarms --region $REGION
+    as-describe-policies --region $REGION
 
 ### Delete everything
 
